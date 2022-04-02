@@ -1,0 +1,4 @@
+function init(self)
+	msg.post("#collision_kinematic", "disable")
+end
+
