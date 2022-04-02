@@ -1,3 +1,16 @@
+# Additional Defold-specific .gitignore sources taken from Mathias Westerdahl's defoldexamples repository
+# Please see license: https://github.com/JCash/defoldexamples/blob/d75bb48b26bcfc9351fd640d696391b4eb7d2a96/LICENSE
+
+.externalToolBuilders
+.DS_Store
+.lock-wscript
+build
+*.pyc
+.project
+.cproject
+builtins
+.internal
+
 # Compiled Lua sources
 luac.out
 
