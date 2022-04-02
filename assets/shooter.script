@@ -6,7 +6,27 @@ function init(self)
 		self.forward_input = true
 		msg.post(".", "acquire_input_focus")
 	end
+
+	cursor.listen(msg.url("#cursor"), cursor.DRAG, function(message_id, message)
+		if message.id == hash("/shooter_ball") then
+			msg.post(message.id, "disable_dynamic")
+			msg.post(message.id, "enable_kinematic")			
+			local p = go.get_position()
+			go.set_position(p, message.id)
+		end
+	end)
+
+	cursor.listen(msg.url("#cursor"), cursor.DRAG_END, function(message_id, message)
+		if message.id == hash("/shooter_ball") then
+			msg.post(message.id, "enable_dynamic")
+			msg.post(message.id, "disable_kinematic")			
+			local p = go.get_position()
+			go.set_position(p, message.id)
+		end
+	end)
+	
 end
+
 function on_message(self, message_id, message, sender)
 	if message_id == cursor.OVER then
 		print("Cursor over", message.id, message.group, message.x, message.y)
@@ -26,3 +46,10 @@ function on_message(self, message_id, message, sender)
 		print("Drag", message.id, message.group, message.x, message.y, message.dx, message.dy)
 	end
 end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
+
