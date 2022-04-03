@@ -1,6 +1,12 @@
 local cursor = require "in.cursor"
 print("cursor: ", cursor)
 
+go.property("shooter_url", msg.url())
+
+local function shoot_ball(self, ball)
+	msg.post(ball, "shoot_ball", {shooter_position = go.get_world_position(self.shooter_url)})
+end
+
 function init(self)
 	if not go.get("#cursor", "acquire_input_focus") then
 		self.forward_input = true
@@ -18,10 +24,18 @@ function init(self)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG_END, function(message_id, message)
 		if message.id == hash("/shooter_ball") then
-			msg.post(message.id, "enable_dynamic")
-			msg.post(message.id, "disable_kinematic")			
-			local p = go.get_position()
-			go.set_position(p, message.id)
+			msg.post(message.id, "disable_kinematic")
+			msg.post(message.id, "enable_dynamic")	
+			shoot_ball(self, message.id)		
+		end
+	end)
+
+	cursor.listen(msg.url("#cursor"), cursor.CLICKED, function(message_id, message)
+		if message.id == hash("/shooter_ball") then
+			msg.post(message.id, "disable_dynamic")
+			msg.post(message.id, "enable_kinematic")	
+			shooter_position = go.get_world_position(self.shooter_url)
+			go.set_position(shooter_position, message.id)
 		end
 	end)
 	
