@@ -36,7 +36,7 @@ function init(self)
 	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG_END, function(message_id, message)
-		if message.ball == hash("ball") then
+		if message.group == hash("ball") then
 			msg.post(message.id, "disable_kinematic")
 			msg.post(message.id, "enable_dynamic")	
 			shoot_ball(self, message.id)		
