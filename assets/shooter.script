@@ -2,6 +2,7 @@ local cursor = require "in.cursor"
 print("cursor: ", cursor)
 
 go.property("shooter_url", msg.url())
+go.property("boundary_url", msg.url())
 
 local function shoot_ball(self, ball)
 	msg.post(ball, "shoot_ball", {shooter_position = go.get_world_position(self.shooter_url)})
@@ -12,6 +13,18 @@ function init(self)
 		self.forward_input = true
 		msg.post(".", "acquire_input_focus")
 	end
+
+	cursor.listen(msg.url("#cursor"), cursor.DRAG_START, function(message_id, message)
+		-- prevent dragging of non-balls
+		if message.id ~= hash("/shooter_ball") then
+			return true
+		end
+		-- prevent dragging of balls/objects beyond boundary
+		-- TODO: transfer boundary condition to another function
+		if message.x > go.get_world_position(self.boundary_url).x then
+			return true
+		end
+	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG, function(message_id, message)
 		if message.id == hash("/shooter_ball") then
@@ -31,6 +44,11 @@ function init(self)
 	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.CLICKED, function(message_id, message)
+		-- prevent dragging of balls/objects beyond boundary
+		-- TODO: transfer boundary condition to another function
+		if message.x > go.get_world_position(self.boundary_url).x then
+			return true
+		end
 		if message.id == hash("/shooter_ball") then
 			msg.post(message.id, "disable_dynamic")
 			msg.post(message.id, "enable_kinematic")	
