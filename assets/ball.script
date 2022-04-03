@@ -1,7 +1,18 @@
 go.property("force_multiplier", 1)
+go.property("level_boundary_url", msg.url())
 
 function init(self)
 	msg.post("#collision_kinematic", "disable")
+end
+
+function update(self, dt)
+	level_boundary_position = go.get_world_position(self.level_boundary_url)
+	if math.abs(go.get_world_position().x) > level_boundary_position.x or math.abs(go.get_world_position().y) > level_boundary_position.y then
+		-- teleport to origin
+		msg.post("#collision_dynamic", "disable")
+		go.set_position(go.get_position("origin"))
+		msg.post("#collision_dynamic", "enable")
+	end
 end
 
 function on_message(self, message_id, message, sender)
