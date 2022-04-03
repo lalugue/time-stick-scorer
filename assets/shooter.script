@@ -16,7 +16,7 @@ function init(self)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG_START, function(message_id, message)
 		-- prevent dragging of non-balls
-		if message.id ~= hash("/shooter_ball") then
+		if message.group ~= hash("ball") then
 			return true
 		end
 		-- prevent dragging of balls/objects beyond boundary
@@ -27,7 +27,7 @@ function init(self)
 	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG, function(message_id, message)
-		if message.id == hash("/shooter_ball") then
+		if message.group == hash("ball") then
 			msg.post(message.id, "disable_dynamic")
 			msg.post(message.id, "enable_kinematic")			
 			local p = go.get_position()
@@ -36,7 +36,7 @@ function init(self)
 	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG_END, function(message_id, message)
-		if message.id == hash("/shooter_ball") then
+		if message.ball == hash("ball") then
 			msg.post(message.id, "disable_kinematic")
 			msg.post(message.id, "enable_dynamic")	
 			shoot_ball(self, message.id)		
@@ -49,7 +49,7 @@ function init(self)
 		if message.x > go.get_world_position(self.boundary_url).x then
 			return true
 		end
-		if message.id == hash("/shooter_ball") then
+		if message.group== hash("ball") then
 			msg.post(message.id, "disable_dynamic")
 			msg.post(message.id, "enable_kinematic")	
 			shooter_position = go.get_world_position(self.shooter_url)
