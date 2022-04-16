@@ -18,7 +18,7 @@ end
 function update(self, dt)
 	spawn_timer = spawn_timer + dt
 	print("dt: ",dt)
-	if spawn_timer >= self.spawn_interval and spawned_balls <= 3 then
+	if spawn_timer >= self.spawn_interval and spawned_balls < max_balls then
 		spawn_timer = 0
 		-- Spawn a ball and store it in the "balls" table.
 		local id = factory.create("#ball_factory", go.get_world_position())
