@@ -25,6 +25,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("destroy_ball") then
 		go.delete()
+		msg.post("/factory", "decrease_spawned_balls")
 	end
 	
 	if message_id == hash("enable_dynamic") then
