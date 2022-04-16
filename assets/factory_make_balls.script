@@ -1,6 +1,6 @@
 local spawned_balls = 0
 local spawn_timer = 3
-local max_balls = 3
+local max_balls = 6
 go.property("spawn_interval", 3)
 
 function init(self)
