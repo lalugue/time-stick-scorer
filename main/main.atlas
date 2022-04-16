@@ -3,10 +3,6 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/logo.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/builtins/graphics/particle_blob.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
