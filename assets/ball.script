@@ -1,5 +1,6 @@
 go.property("force_multiplier", 1)
 go.property("level_boundary_url", msg.url())
+go.property("is_bonus", false)
 
 function init(self)
 	msg.post("#collision_kinematic", "disable")
@@ -9,6 +10,10 @@ function init(self)
 		go.set("#sprite", "scale.x", 0.25)
 		go.set("#sprite", "scale.y", 0.25)
 		go.set("#sprite", "scale.z", 0.25)
+	end
+
+	if self.is_bonus then
+		go.set("#sprite", "play_animation",{ id = hash("basketball_inverted_anim")})
 	end
 end
 
