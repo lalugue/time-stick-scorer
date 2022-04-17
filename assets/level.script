@@ -4,9 +4,7 @@ local bonus_time = 8
 go.property("time_interval", 1)
 
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	msg.post("/game_over", "disable")
 end
 
 function final(self)
@@ -22,6 +20,7 @@ function update(self, dt)
 		time_remaining = time_remaining - 1
 		if time_remaining < 0 then
 			time_remaining = 0
+			msg.post("/game_over", "enable")
 		end
 		msg.post("/timeleft", "set_time", {timeleft = time_remaining})
 	end
