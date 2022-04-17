@@ -6,3 +6,13 @@ end
 function final(self)
 	msg.post(".", "release_input_focus")
 end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		print("proxy_loaded", sender)
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+	elseif message_id == hash("proxy_unloaded") then
+		print("proxy_unloaded", sender)
+	end
+end
