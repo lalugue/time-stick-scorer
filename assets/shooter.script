@@ -4,12 +4,15 @@ print("cursor: ", cursor)
 go.property("shooter_url", msg.url())
 go.property("boundary_url", msg.url())
 
+local shooter_position
+
 local function shoot_ball(self, ball)
 	msg.post(ball, "shoot_ball", {shooter_position = go.get_world_position(self.shooter_url)})
 	sprite.play_flipbook("/shooter#sprite", hash("shooting"))
 end
 
 function init(self)
+	shooter_position = go.get_world_position(self.shooter_url)
 	msg.post("/shooter#sprite", "play_animation", {id = hash("idle")})
 	if not go.get("#cursor", "acquire_input_focus") then
 		self.forward_input = true
@@ -56,7 +59,6 @@ function init(self)
 			msg.post("/shooter#sprite", "play_animation", {id = hash("idle")})
 			msg.post(message.id, "disable_dynamic")
 			msg.post(message.id, "enable_kinematic")	
-			shooter_position = go.get_world_position(self.shooter_url)
 			go.set_position(shooter_position, message.id)
 		end
 	end)
