@@ -35,9 +35,17 @@ function init(self)
 	cursor.listen(msg.url("#cursor"), cursor.DRAG, function(message_id, message)
 		if message.group == hash("ball") then
 			msg.post(message.id, "disable_dynamic")
-			msg.post(message.id, "enable_kinematic")			
+			msg.post(message.id, "enable_kinematic")
+			local max_distance = 150
 			local p = go.get_position()
-			go.set_position(p, message.id)
+			local distance = math.abs(vmath.length(p-shooter_position))
+			if distance > max_distance then
+				local angle = math.atan2(p.y - shooter_position.y, p.x - shooter_position.x)
+				local p_clamped = shooter_position + vmath.vector3(max_distance * math.cos(angle), max_distance * math.sin(angle), 0)
+				go.set_position(p_clamped, message.id)
+			else				
+				go.set_position(p, message.id)
+			end
 		end
 	end)
 
