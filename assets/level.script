@@ -34,10 +34,12 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("add_time") then
+		sound.play("sounds#time_score")
 		timer = 0
 		time_remaining = time_remaining + bonus_time
 		msg.post("/timeleft", "set_time", {timeleft = time_remaining})
 	elseif message_id == hash("add_score") then
+		sound.play("sounds#sound_score")
 		score = score + 1
 		msg.post("/scoreboard", "add_score")
 	end
