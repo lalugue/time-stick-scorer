@@ -1,6 +1,6 @@
 local timer = 0
 local time_remaining = 24
-local bonus_time = 8
+local bonus_time = 14
 local score = 0
 local game_over = false
 go.property("time_interval", 1)
