@@ -1,7 +1,7 @@
 script: "/assets/gui/game_over.gui_script"
 fonts {
-  name: "system_font"
-  font: "/builtins/fonts/system_font.font"
+  name: "font"
+  font: "/assets/font/font.font"
 }
 background_color {
   x: 0.0
@@ -23,8 +23,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.0
-    y: 3.0
+    x: 1.5
+    y: 1.5
     z: 1.0
     w: 1.0
   }
@@ -43,7 +43,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Game Over!"
-  font: "system_font"
+  font: "font"
   id: "game_over"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -86,8 +86,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -106,7 +106,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Score:"
-  font: "system_font"
+  font: "font"
   id: "score_title"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -149,8 +149,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.0
-    y: 3.0
+    x: 1.5
+    y: 1.5
     z: 1.0
     w: 1.0
   }
@@ -169,7 +169,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "0"
-  font: "system_font"
+  font: "font"
   id: "score"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -267,8 +267,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -287,7 +287,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Back!"
-  font: "system_font"
+  font: "font"
   id: "text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
