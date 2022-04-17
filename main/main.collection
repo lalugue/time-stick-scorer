@@ -1631,7 +1631,7 @@ embedded_instances {
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
   "text: \\\"Time:\\\"\\n"
-  "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
+  "font: \\\"/assets/font/font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
@@ -1687,12 +1687,12 @@ embedded_instances {
   "text: \\\"24\\\\n"
   "\\\"\\n"
   "  \\\"\\\"\\n"
-  "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
+  "font: \\\"/assets/font/font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: -32.727\n"
+  "    y: -40.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -1715,8 +1715,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.2
-    y: 2.2
+    x: 1.0
+    y: 1.0
     z: 1.0
   }
 }
@@ -1778,7 +1778,7 @@ embedded_instances {
   "text: \\\"Score:\\\\n"
   "\\\"\\n"
   "  \\\"\\\"\\n"
-  "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
+  "font: \\\"/assets/font/font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
@@ -1832,12 +1832,12 @@ embedded_instances {
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
   "text: \\\"0\\\"\\n"
-  "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
+  "font: \\\"/assets/font/font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: -32.0\n"
+  "    y: -40.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -1860,9 +1860,9 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.0
-    y: 2.0
-    z: 2.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
   }
 }
 embedded_instances {
