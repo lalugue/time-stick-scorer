@@ -1,5 +1,6 @@
 local timer = 0
 local time_remaining = 24
+local bonus_time = 8
 go.property("time_interval", 1)
 
 function init(self)
@@ -27,9 +28,11 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	if message_id == hash("add_time") then
+		timer = 0
+		time_remaining = time_remaining + bonus_time
+		msg.post("/timeleft", "set_time", {timeleft = time_remaining})
+	end
 end
 
 function on_input(self, action_id, action)
