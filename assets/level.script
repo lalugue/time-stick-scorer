@@ -6,6 +6,8 @@ go.property("time_interval", 1)
 
 function init(self)
 	msg.post("/game_over", "disable")
+	msg.post("/timeleft", "set_time", {timeleft = time_remaining})
+	msg.post("/scoreboard", "set_score", {score = score})
 end
 
 function final(self)
