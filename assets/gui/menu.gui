@@ -3,6 +3,10 @@ fonts {
   name: "system_font"
   font: "/builtins/fonts/system_font.font"
 }
+fonts {
+  name: "font"
+  font: "/assets/font/font.font"
+}
 textures {
   name: "main"
   texture: "/main/main.atlas"
@@ -82,8 +86,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.0
-    y: 3.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -102,7 +106,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Start!"
-  font: "system_font"
+  font: "font"
   id: "text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -135,7 +139,7 @@ nodes {
 nodes {
   position {
     x: 640.0
-    y: 614.0
+    y: 640.0
     z: 0.0
     w: 1.0
   }
@@ -146,8 +150,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.0
-    y: 3.0
+    x: 1.5
+    y: 1.5
     z: 1.0
     w: 1.0
   }
@@ -166,7 +170,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Stick Arcade!"
-  font: "system_font"
+  font: "font"
   id: "title"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -209,8 +213,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.5
-    y: 2.5
+    x: 1.25
+    y: 1.25
     z: 1.0
     w: 1.0
   }
@@ -229,7 +233,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "How to play:"
-  font: "system_font"
+  font: "font"
   id: "how_to_play"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -272,8 +276,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -292,7 +296,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Shoot as many balls as you can in 24 seconds!"
-  font: "system_font"
+  font: "font"
   id: "rule_time"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -335,8 +339,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -355,7 +359,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Watch out for bonus balls, they give extra time!"
-  font: "system_font"
+  font: "font"
   id: "rule_bonus"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -398,8 +402,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -418,7 +422,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Click a ball, then drag to aim"
-  font: "system_font"
+  font: "font"
   id: "rule_aim"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -461,8 +465,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 0.8
+    y: 0.8
     z: 1.0
     w: 1.0
   }
@@ -481,7 +485,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Any ball within the left half of the court can be grabbed!"
-  font: "system_font"
+  font: "font"
   id: "rule_get"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -512,7 +516,7 @@ nodes {
 }
 nodes {
   position {
-    x: 200.0
+    x: 64.0
     y: 494.0
     z: 0.0
     w: 1.0
@@ -567,7 +571,7 @@ nodes {
 }
 nodes {
   position {
-    x: 200.0
+    x: 64.0
     y: 434.0
     z: 0.0
     w: 1.0
