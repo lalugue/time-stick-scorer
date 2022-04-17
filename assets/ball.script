@@ -30,7 +30,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("destroy_ball") then
 		msg.post("/factory", "decrease_spawned_balls")
-		msg.post("/scoreboard", "add_score")
+		msg.post("/level", "add_score")
 		if self.is_bonus then
 			msg.post("/level", "add_time")
 		end
