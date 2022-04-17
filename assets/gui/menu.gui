@@ -169,7 +169,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Stick Arcade!"
+  text: "Stick Basketball Arcade!"
   font: "font"
   id: "title"
   xanchor: XANCHOR_NONE
