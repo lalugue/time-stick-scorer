@@ -1,6 +1,7 @@
 local spawned_balls = 0
 local spawn_timer = 3
 local max_balls = 6
+local make_balls = true
 go.property("spawn_interval", 3)
 
 function init(self)
@@ -18,7 +19,7 @@ end
 function update(self, dt)
 	spawn_timer = spawn_timer + dt
 	print("dt: ",dt)
-	if spawn_timer >= self.spawn_interval and spawned_balls < max_balls then
+	if spawn_timer >= self.spawn_interval and spawned_balls < max_balls and make_balls then
 		spawn_timer = 0
 		-- Spawn a ball and store it in the "balls" table.
 		local id = factory.create("#ball_factory", go.get_world_position(), nil, {is_bonus = (math.random() >= 0.7)})
@@ -29,6 +30,8 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("decrease_spawned_balls") then
 		spawned_balls = spawned_balls - 1
+	elseif message_id == hash("make_balls") then
+		make_balls = message.make_balls
 	end
 end
 
