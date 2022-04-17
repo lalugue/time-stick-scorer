@@ -22,7 +22,7 @@ function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then 
 		local start_button = gui.get_node("start_button")
 		if gui.pick_node(start_button, action.x, action.y) then
-			print("button clicked")
+			msg.post("controller:/controller_object", "load_main")
 		end
 	end
 end

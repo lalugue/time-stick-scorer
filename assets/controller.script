@@ -14,5 +14,9 @@ function on_message(self, message_id, message, sender)
 		msg.post(sender, "enable")
 	elseif message_id == hash("proxy_unloaded") then
 		print("proxy_unloaded", sender)
+	elseif message_id == hash("load_main") then
+		msg.post("#menuproxy", "unload")
+		msg.post("#mainproxy", "load")
 	end
+	
 end
