@@ -36,6 +36,7 @@ function on_message(self, message_id, message, sender)
 		time_remaining = time_remaining + bonus_time
 		msg.post("/timeleft", "set_time", {timeleft = time_remaining})
 	elseif message_id == hash("add_score") then
+		score = score + 1
 		msg.post("/scoreboard", "add_score")
 	end
 end
