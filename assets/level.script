@@ -1,5 +1,5 @@
 local timer = 0
-local time_remaining = 24
+local time_remaining = 3
 local bonus_time = 8
 local score = 0
 local game_over = false
@@ -23,7 +23,10 @@ function update(self, dt)
 	if timer >= self.time_interval then
 		timer = 0
 		time_remaining = time_remaining - 1
-		if time_remaining < 0 then
+		if time_remaining < 0  and not game_over then
+			game_over = true
+			sound.stop("sounds#bgm")
+			sound.play("sounds#game_over")
 			time_remaining = 0
 			msg.post("/game_over", "enable")
 			msg.post("/game_over#game_over", "final_score", {final_score = score})
