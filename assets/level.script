@@ -1,5 +1,5 @@
 local timer = 0
-local time_remaining = 3
+local time_remaining = 24
 local bonus_time = 8
 local score = 0
 local game_over = false
@@ -33,7 +33,9 @@ function update(self, dt)
 			msg.post("/game_over", "enable")
 			msg.post("/game_over#game_over", "final_score", {final_score = score})
 		end
-		msg.post("/timeleft", "set_time", {timeleft = time_remaining})
+		if not game_over then
+			msg.post("/timeleft", "set_time", {timeleft = time_remaining})
+		end
 	end
 end
 
