@@ -14,7 +14,11 @@ A [Ludum Dare 50](https://ldjam.com/events/ludum-dare/50) game 🎮
 
 - Any ball within the left half of the court is grabbable (or reboundable!) 
 
+# Screenshots
 
+![getting ready to shoot](screenshots/sba-1.png)
+
+![shoot ball with follow-through](screenshots/sba-2.png)
 
 ---------------------------------
 
