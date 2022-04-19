@@ -20,6 +20,10 @@ A [Ludum Dare 50](https://ldjam.com/events/ludum-dare/50) game 🎮
 
 ![shoot ball with follow-through](screenshots/sba-2.png)
 
+# Dependencies
+
+This game uses the [Defold-Input](https://github.com/britzl/defold-input) library as a dependency ([license](https://github.com/britzl/defold-input/blob/8b81fe86ef58273cee91a5ae36f046e8dc516297/LICENSE.md))
+
 ---------------------------------
 
 # Welcome to Defold
