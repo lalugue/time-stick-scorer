@@ -4,6 +4,10 @@ A 2D Basketball Arcade Game! 🏀
 
 A [Ludum Dare 50](https://ldjam.com/events/ludum-dare/50) game 🎮
 
+# Jam Version
+
+The `ludum-dare-50` branch contains the code used during the jam itself, like a "time capsule"
+
 # How to play
 
 - Like with arcade games outside, shoot as many balls before the timer runs out! 🧺
