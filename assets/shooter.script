@@ -43,17 +43,20 @@ function init(self)
 				local angle = math.atan2(p.y - shooter_position.y, p.x - shooter_position.x)
 				local p_clamped = shooter_position + vmath.vector3(max_distance * math.cos(angle), max_distance * math.sin(angle), 0)
 				go.set_position(p_clamped, message.id)
+				p = p_clamped
 			else				
 				go.set_position(p, message.id)
 			end
+			msg.post("/aim_factory", "create_aim", {position = vmath.vector3(p.x,p.y,1)})
 		end
 	end)
 
 	cursor.listen(msg.url("#cursor"), cursor.DRAG_END, function(message_id, message)
 		if message.group == hash("ball") then
 			msg.post(message.id, "disable_kinematic")
-			msg.post(message.id, "enable_dynamic")	
-			shoot_ball(self, message.id)		
+			msg.post(message.id, "enable_dynamic")
+			msg.post("/aim_factory", "end_aim")	
+			shoot_ball(self, message.id)
 		end
 	end)
 
